@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<form action="/BBS/JSP/Login/MyJsp.jsp" id="myform" method="post"
+      onsubmit="return checkAll(this.name.value, this.password.value);">
+    <table >
+        <tr>
+            <td>用户名</td>
+            <td><input type="text" name="name" id="name" onblur="checkName(this.value);"/></td>
+            <td><font color="red"><span id="spanName"></span></font></td>
+        </tr>
+        <tr>
+            <td>密码</td>
+            <td><input type="password" name="password" id="password" onblur="checkPassword(this.value)"/></td>
+            <td><font color="red"><span id="spanPassword"></span></font></td>
+        </tr>
+        <tr>
+            <td colspan="2">
+                <input type="submit" value="登录">
+            </td>
+        </tr>
+    </table>
+</form>
+</body>
+<script type="text/javascript">
+
+    function checkName(name)
+    {
+     if(name=="yyy"){
+         return true;
+     }
+    }
+
+    function checkPassword(password)
+    {
+        if(password=="yyy"){
+            return true;
+        }
+    }
+
+    function checkAll(name, password)
+    {
+        // var result = true;
+
+        if (checkName(name)&&checkPassword(password))
+        {
+            result = true;
+        }
+        else {
+            result=false;
+            alert("请输入正确账号密码！")
+        }
+
+        return result;
+    }
+</script>
+</html>
